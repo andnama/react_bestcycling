@@ -1,4 +1,5 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 import geoPoint from "../assets/map.png";
 import bc_icon from "../assets/bc_icon.png";
@@ -9,10 +10,11 @@ import { profile } from "../db/db";
 import "./Profile.css";
 
 const getUserImage = () => {
-    return profile ? profile.avatar : bc_icon;
-  };
+  return profile ? profile.avatar : bc_icon;
+};
 
 const Profile = () => {
+  const navigate = useNavigate();
   return (
     <>
       <div className="user_personal_info">
@@ -62,13 +64,11 @@ const Profile = () => {
       <hr className="solid" />
       <div className="last_classes">
         <h2>Últimas Clases</h2>
-        <button onClick={() => alert("butonCicked")} className="classes_button">
+        <button onClick={() => navigate("/all_classes")} className="classes_button" type="button">
           Ver todas
         </button>
       </div>
-      <div>
-
-      </div>
+      <div></div>
     </>
   );
 };

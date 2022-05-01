@@ -1,12 +1,15 @@
-import React, { Fragment } from "react";
+import React from "react";
 import { unixToDateLong, getInstructorsName } from "../Utils";
+import { useNavigate } from "react-router-dom";
 
 import "./SmallClass.css";
 import icon from "../assets/small_logo.png";
 
-const SmallClass = ({trainClass}) => {
+const SmallClass = ({trainClass, element}) => {
+    let navigate = useNavigate();
     return (
-        <div key={trainClass.id} className="small_class">
+        <div key={trainClass.id} className="small_class" 
+            onClick={() => navigate("/media_player", {state: element})}>
             <div className="small_class_header">
                 <img className="small_icon" src={icon} alt="None"/>
                 <h4 className="date">{unixToDateLong(trainClass.published)}</h4>

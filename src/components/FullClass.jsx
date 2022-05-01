@@ -1,4 +1,5 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import { unixToDateShort, getInstructorsName } from "../Utils";
 
 import "./FullClass.css";
@@ -22,9 +23,10 @@ const ball = (full, id) => {
                  (<span key={id} className="emptyball" alt = "none"></span>);
 }
 
-const FullClass = ({ trainClass }) => {
+const FullClass = ({ trainClass, element }) => {
+  let navigate = useNavigate();
   return (
-    <div className="fullClass">
+    <div className="fullClass" onClick={() => navigate("/media_player", {state: element})}>
       <div className="thumbnail">
         <img src={trainClass.image} alt="none"/>
         <div className="title"> 
