@@ -1,0 +1,128 @@
+* {
+    margin: 0;
+    border: 0;
+    box-sizing: border-box;
+  }
+  body{
+    background-color: #151515;
+  }
+
+  h1, h2 {
+    color: white;
+  }
+  
+  h3, h4{
+    color: #B1B1B1;
+  }
+  
+  .logo{
+    width: 300px;
+    height: 60px;
+  }
+  .user_personal_info{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    flex-flow: row wrap;
+  }
+  .avatar{
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    margin: 50px 0px 50px 0px;
+  }
+  .geo_icon{
+    width: 25px;
+    height: 25px;
+    
+  }
+  .location{
+    display: flex;
+    margin-top: 10px;
+  }
+  
+  .user_info{
+    margin-bottom: 100px;
+    margin-left: 20px;
+  }
+  
+  .solid{
+    border-top: 3px solid #2E2E2E;
+    margin-left: 40px;
+    margin-right: 40px;
+  }
+  
+  .points_section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    flex-flow: row wrap;
+    text-align: center;
+  }
+  .point_item{
+    padding: 30px;
+    margin: 0px 50px 0px 50px;
+  }
+  .point_item h3{
+    margin-top: 10px;
+    text-transform: uppercase;
+    font-family: sans-serif;
+  }
+  
+  .skills_section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    flex-flow: row wrap;
+    text-align: center;
+  }
+  .skill{
+    padding: 30px;
+  }
+  .skill div{
+    width: 75px;
+    height: 75px;
+    border-radius: 50%;
+    line-height: 70px;
+    font-size: 30px;
+    font-weight: bold;
+    text-shadow: black 0px 0px 1px;
+    color: #fff;
+    text-align: center;
+  }
+  .mind{
+    background-color: #1D8CB9;
+  }
+  .strength{
+    background-color: #F03C46;
+  }
+  .flexibility{
+    background-color: #69AE00;
+  }
+  .stamina{
+    background-color: #FCD900;
+  }
+  .skill h4{
+    margin-top: 10px;
+    text-transform: uppercase;
+    font-family: sans-serif;
+  }
+  .last_classes{
+    margin: 40px 40px 30px 40px;
+    display: flex;
+    text-transform: uppercase;
+    justify-content: space-between;
+  }
+  .classes_button{
+    height: 35px;
+    width: 120px;
+    background-color: #FF7901;
+    color: #fff;
+    text-transform: uppercase;
+    align-self: right;
+    border-radius: 5%;
+  }
+    

@@ -1,0 +1,100 @@
+body {
+    background-color: black;
+  }
+  .fullClass{
+    background-color: #343739;
+    position: relative;
+    width: 350px;
+    height: 205px;
+    margin: 0px 0px 20px 20px;
+    color: #bfbeba;
+  }
+  
+  .title {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+  }
+  .thumbnail {
+    width: 100%;
+  }
+  .thumbnail img {
+    width: 100%;
+  }
+
+  h1 , h2 , h3, h4 {
+    margin: 0;
+  }
+
+  .footer{
+    display: flex;
+    justify-content: space-between;
+    height: 20px;
+    margin: 0 5px;
+  }
+
+  .fullClass .category1{
+    background-color: red;
+  }
+  .fullClass .category2{
+    background-color: blue;
+  }
+  .fullClass .category3{
+    background-color: green;
+  }
+  .fullClass .category4{
+    background-color: yellow;
+  }
+  .fullClass .category5{
+    background-color: orange;
+  }
+  .fullClass .category11{
+    background-color: purple;
+  }
+  .fullClass .category21{
+    background-color: white;
+  }
+  .fullClass .category31{
+    background-color: brown;
+  }
+  .fullClass .category41{
+    background-color: greenyellow;
+  }
+  .fullClass .category51{
+    background-color: pink;
+  }
+  .square-bottom
+  {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    float: right;
+    height: 20px;
+    width: 20px;
+    clear: both;
+  }
+
+  .fullClass:hover {
+    box-shadow: 0px 30px 18px -8px rgba(0, 0, 0, 0.1);
+    transform: scale(1.05, 1.05);
+    cursor: pointer;
+  }
+
+  .fullball{
+    position: absolute;
+    height: 8px;
+    width:  8px;
+    margin: 5px 0px 0px 10px;
+    background-color: #bfbeba;
+    border-radius: 50px;
+  }
+
+  .emptyball{
+    position: absolute;
+    height: 8px;
+    width:  8px;
+    margin: 5px 0px 0px 10px;
+    background-color: #bfbeba;
+    border-radius: 50px;
+    opacity: 0.7;
+  }

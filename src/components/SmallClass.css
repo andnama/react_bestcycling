@@ -1,0 +1,31 @@
+
+h1, h2, h3, h4, h5{
+    color: white;
+}
+.small_class{
+    width: 300px;
+    height: 100px;
+    margin: 0px 20px 20px 20px;
+}
+.small_class:hover {
+    box-shadow: 0px 30px 18px -8px rgba(0, 0, 0, 0.1);
+    transform: scale(1.05, 1.05);
+    cursor: pointer;
+  }
+.header{
+    display: flex;
+    justify-content: space-between;
+    margin: 0px 0px 10px 0px;
+    background-color: #151515;
+}
+.small_icon{
+    width: 120px;
+    height: 30px;
+}
+.date{
+    line-height: 33px;
+}
+.content{
+    background-color: #2F2F2F;
+    padding: 10px;
+}

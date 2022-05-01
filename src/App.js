@@ -1,10 +1,47 @@
 import React from "react";
+import { useEffect, useState } from "react";
 
-const App = () => 
-{
-    return (
-        <h1>Hello You</h1>
-    );
-}
+//data
+import { trainingClasses } from "./db/db";
+
+//styling
+import "./App.css";
+import logo from "./assets/logo.png";
+
+//Components
+import FullClass from "./components/FullClass";
+import SmallClass from "./components/SmallClass";
+import Profile from "./components/Profile";
+
+// return all clases if true in full format or only 9 in small format if false
+const Classes = ({all}) => {
+  // Check if user has classes
+  return trainingClasses.length > 0 ? (
+    // the iterate through map
+    trainingClasses.slice(0, all? trainingClasses.lenth : 9).map((trainC) => {
+        return all?  (<FullClass key={trainC.id} trainClass={trainC} />) : 
+                     (<SmallClass key={trainC.id} trainClass={trainC}/>);
+    })
+  ) : (
+    <h1>No Classes to show</h1>
+  );
+};
+
+const App = () => {
+  // Application loads -> load user from json
+  useEffect(() => {}, []);
+
+  return (
+    <div className="app">
+      <div className="header">
+        <img className="logo" src={logo} alt="none" />
+      </div>
+        <Profile/>
+      <div className="container">
+        <Classes all={false}/>
+      </div>
+    </div>
+  );
+};
 
 export default App;
