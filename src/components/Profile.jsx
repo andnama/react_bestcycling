@@ -1,4 +1,4 @@
-import React, { Fragment } from "react";
+import React from "react";
 
 import geoPoint from "../assets/map.png";
 import bc_icon from "../assets/bc_icon.png";
@@ -62,12 +62,12 @@ const Profile = () => {
       <hr className="solid" />
       <div className="last_classes">
         <h2>Últimas Clases</h2>
-        <button onClick={alert("butonCicked")} className="classes_button">
+        <button onClick={() => alert("butonCicked")} className="classes_button">
           Ver todas
         </button>
       </div>
       <div>
-        
+
       </div>
     </>
   );

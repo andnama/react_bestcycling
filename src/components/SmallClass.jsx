@@ -7,7 +7,7 @@ import icon from "../assets/small_logo.png";
 const SmallClass = ({trainClass}) => {
     return (
         <div key={trainClass.id} className="small_class">
-            <div className="header">
+            <div className="small_class_header">
                 <img className="small_icon" src={icon} alt="None"/>
                 <h4 className="date">{unixToDateLong(trainClass.published)}</h4>
             </div>
