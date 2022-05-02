@@ -1,7 +1,4 @@
 
-h1, h2, h3, h4, h5{
-    color: white;
-}
 .small_class{
     width: 300px;
     height: 100px;
@@ -28,4 +25,11 @@ h1, h2, h3, h4, h5{
 .content{
     background-color: #2F2F2F;
     padding: 10px;
+}
+
+h4{
+    color: #BBBBBB;
+}
+h5{
+    color: #808080;
 }

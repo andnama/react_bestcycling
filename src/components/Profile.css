@@ -14,6 +14,11 @@
   h3, h4{
     color: #B1B1B1;
   }
+  .location{
+    color: #808080;
+    line-height: 15px;
+    margin: 0px 0px 0px 2px;
+  }
   
   .logo{
     width: 300px;
@@ -21,10 +26,11 @@
   }
   .user_personal_info{
     display: flex;
-    justify-content: center;
+    justify-content: left;
     align-items: center;
     flex-direction: column;
     flex-flow: row wrap;
+    margin: 0px 0px 0px 15%;
   }
   .avatar{
     width: 250px;
@@ -81,6 +87,9 @@
   }
   .skill{
     padding: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
   .skill div{
     width: 75px;

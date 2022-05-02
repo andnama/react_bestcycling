@@ -6,21 +6,14 @@ import "./FullClass.css";
 
 // return the total number of ball
 const getBalls = (level) => {
-    var elements = [];
-    for(var i = 1; i <= 3; i++)
-    {
-        elements.push(ball(i <= level, i));
-    }
-    return (
-        <span>
-            {elements}
-        </span>
-    );
+    if(level === 1){return (<div className="balls"><Ball full={true}/><Ball full={false}/><Ball full={false}/></div>)}
+    if(level === 2){return (<div className="balls"><Ball full={true}/><Ball full={true}/><Ball full={false}/></div>)}
+    if(level === 3){return (<div className="balls"><Ball full={true}/><Ball full={true}/><Ball full={true}/></div>)}
 }
 //gets the ball type
-const ball = (full, id) => {
-    return full? (<span key={id}className="fullball" alt = "none"></span>):
-                 (<span key={id} className="emptyball" alt = "none"></span>);
+const Ball = ({full}) => {
+    return full? (<div className="fullball" alt = "none"></div>):
+                 (<div className="emptyball" alt = "none"></div>);
 }
 
 const FullClass = ({ trainClass, element }) => {

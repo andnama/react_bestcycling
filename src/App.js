@@ -1,5 +1,4 @@
 import React from "react";
-import { useEffect, useState} from "react";
 import {BrowserRouter, Routes, Route} from "react-router-dom";
 
 //styling
@@ -11,7 +10,7 @@ import Profile from "./components/Profile";
 import ClassView from "./components/ClassView";
 
 // Utils
-import { Classes } from "./Utils";
+import { Classes } from "./components/Classes";
 
 // Methods to get components
 const SetProfile = ()=> {
@@ -37,7 +36,6 @@ const SetClassView = () => {
 
 export const App = () => {
   //App state
-  const [state, setState] = useState('profile');
 
   return (
     <BrowserRouter>

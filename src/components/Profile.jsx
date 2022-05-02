@@ -23,7 +23,7 @@ const Profile = () => {
           <h1>{profile.name}</h1>
           <div className="location">
             <img className="geo_icon" src={geoPoint} alt="None" />
-            <h4>Valencia, Spain</h4>
+            <h4 className="location">Valencia, Spain</h4>
           </div>
         </div>
       </div>
