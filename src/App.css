@@ -17,7 +17,7 @@
 }
 
 .container {
-  margin: 30px 20px 30px 20px;
+  margin: 115px 20px 30px 20px;
   display: flex;
     justify-content: center;
     align-items: center;
@@ -33,4 +33,55 @@ h1, h2{
 h3, h4, h5{
   font-family: 'Roboto', sans-serif;
   font-weight: 400;
+}
+
+.automatic{
+  transition-duration: 0.4s;
+  display: flex;
+  float: right;
+  align-items: center;
+  justify-content: space-between;
+  margin: 30px 30px;
+  background-color: #2F2F2F;
+  width: 340px;
+  height: 45px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.autoText{
+  display: flex;
+  font-size: 16px;
+  color: #B7B7B7;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 800;
+  text-transform: uppercase;
+  margin-left: 55px;
+}
+.automatic:hover {
+  background-color: #B7B7B7; 
+}
+.automatic:hover > .autoText{
+  color: #2F2F2F;
+}
+.automatic:hover > .insideTriangle{
+  border-color: transparent transparent transparent #B7B7B7;
+}
+.outsideTriangle{
+  position: absolute;
+  margin: 10px 10px 10px 20px;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 12px 0 12px 19.3px;
+  border-color: transparent transparent transparent #FB7804;
+}
+.insideTriangle{
+  transition-duration: 0.4s;
+  position: absolute;
+  margin: 10px 10px 10px 22px;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 8px 0 8px 12px;
+  border-color: transparent transparent transparent #2F2F2F;
 }

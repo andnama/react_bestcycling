@@ -8,11 +8,30 @@
   margin: 0px 0px 20px 20px;
   color: #9F9F9F;
 }
-
-.title {
+.top_info{
   position: absolute;
   top: 10px;
-  left: 10px;
+  left: 15px;
+  display: flex;
+}
+.checkBox {
+  display: block;
+  height: 20px;
+  width: 20px;
+  accent-color: white;
+  cursor: pointer;
+}
+.checkBox:checked {
+  accent-color: #FF7901;
+  fill: white;
+}
+.checkBox:checked:after {
+  color: white;
+}
+
+.title{
+  margin-left: 10px;
+  line-height: 18px;
 }
 .thumbnail {
   width: 100%;
@@ -114,4 +133,23 @@ div {
 
 .date{
   margin-left: 10px;
+}
+
+.finished{
+  width: 90px;
+  height: 20px;
+  background-color: #FF7901;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  color: #FFF9F5;
+  border-radius: 50px;
+  font-size: 13px;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  margin: 0px 0px 0px 0px;
+  line-height: 20px;
+  position: absolute;
+  top: 125px;
+  left: 15px;
 }

@@ -1,4 +1,5 @@
 import React from "react";
+import {useState, useEffect} from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import { getInstructorsName } from "../Utils";
 import "./ClassView.css";
@@ -9,6 +10,16 @@ import { trainingClasses } from "../db/db";
 const ClassView = () => {
   let navigate = useNavigate();
   let {state} = useLocation();
+
+  // 5 seconds for the counter
+  const [count, setCount] = useState(5);
+  useEffect(() => {
+    if(count === 0) navigate("/"); 
+    setTimeout(() => {
+      setCount((count) => count - 1);
+    }, 1000);
+  });
+
   // In case the element selected is 0 we choose the fisrt one
   state = state === null?  0 : state;
   return (
@@ -23,7 +34,7 @@ const ClassView = () => {
           <h3>{getInstructorsName(trainingClasses[state].instructor_id)}</h3>
         </div>
       </div>
-      <div className="media_player">5</div>
+      <div className="media_player">{count}</div>
     </div>
   );
 };
