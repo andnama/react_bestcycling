@@ -23,3 +23,15 @@ export const getInstructorsName = (instructor_id) => {
   }
   return "No such instructor"
 }
+
+// set all elements of array to false
+export const falseArray = (array, size) => {
+  for (var i = 0; i < size; i++) {
+    array.push(false);
+  }
+  return array
+}
+
+// returns array from localStorage
+export const arrayInLocal = (name) => JSON.parse(localStorage?.getItem(name));
+export const arrayToLocal = (name, item) => localStorage.setItem(name, JSON.stringify(item));

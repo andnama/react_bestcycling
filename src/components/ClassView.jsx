@@ -1,11 +1,14 @@
 import React from "react";
 import {useState, useEffect} from "react";
 import { useNavigate, useLocation } from "react-router-dom";
-import { getInstructorsName } from "../Utils";
+//Styling
 import "./ClassView.css";
 
 //data
 import { trainingClasses } from "../db/db";
+
+//Utils
+import { arrayInLocal, arrayToLocal, getInstructorsName } from "../Utils";
 
 const ClassView = () => {
   let navigate = useNavigate();
@@ -14,11 +17,19 @@ const ClassView = () => {
   // 5 seconds for the counter
   const [count, setCount] = useState(5);
   useEffect(() => {
-    if(count === 0) navigate("/"); 
+    if(count === 0) timerIs0(); 
     setTimeout(() => {
       setCount((count) => count - 1);
     }, 1000);
   });
+
+  // If timer gets to 0 update state in localStorage about completition
+  const timerIs0 = () => {
+    let arrayFinished = arrayInLocal("finished_array");
+    arrayFinished[state] = true;
+    localStorage.setItem("finished_array", JSON.stringify(arrayFinished));
+    navigate("/")
+  } 
 
   // In case the element selected is 0 we choose the fisrt one
   state = state === null?  0 : state;
@@ -29,7 +40,6 @@ const ClassView = () => {
             {"<"}
         </button>
         <div className="class_info">
-            {console.log(state)}
           <h1>{trainingClasses[state].name}</h1>
           <h3>{getInstructorsName(trainingClasses[state].instructor_id)}</h3>
         </div>

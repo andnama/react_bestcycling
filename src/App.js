@@ -1,5 +1,6 @@
 import React from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import {useState, useEffect} from "react";
+import { BrowserRouter, Routes, Route, useNavigate } from "react-router-dom";
 
 //styling
 import "./App.css";
@@ -11,6 +12,10 @@ import ClassView from "./components/ClassView";
 
 // Utils
 import { Classes } from "./components/Classes";
+import { falseArray, arrayToLocal, arrayInLocal } from "./Utils";
+
+//data
+import { trainingClasses } from "./db/db";
 
 // Methods to get components
 const SetProfile = () => {
@@ -24,15 +29,30 @@ const SetProfile = () => {
   );
 };
 const SetAllClasses = () => {
+  let navigate = useNavigate();
+    //  auto play handler
+    const autoPlay = () =>{
+      let array = arrayInLocal("auxList")? arrayInLocal("auxList"): [];
+      array.map(item => {
+        let array = arrayInLocal("auxList") ? arrayInLocal("auxList") : [];
+        // remove after call to it
+        let i = array.indexOf(item);
+        console.log(item);
+        if (i !== -1) array.splice(i, 1);
+        arrayToLocal("auxList", array);
+        //Navigate for component selection
+        navigate("/media_player", { state: item });
+      })
+    }
   return (
     <>
-      <div className="automatic">
+    <div className="automatic" onClick={() => autoPlay()}>
         <div className="outsideTriangle"/>
-        <dive className="insideTriangle" />
+        <div className="insideTriangle" />
         <h2 className="autoText">Reproducir Automáticamente</h2>
       </div>
       <div className="container">
-        <Classes all={true} />
+        <Classes isFullClasses={true} />
       </div>
     </>
   );
@@ -42,8 +62,17 @@ const SetClassView = () => {
 };
 
 export const App = () => {
+  //Classes state 
+  const [finished, setFinished] = useState([]);
+  const auxList = [];
+  // Use effect initilizes the array for completed
+  useEffect(() => {
+    setFinished(falseArray(finished, trainingClasses.length));
+    arrayToLocal("finished_array", finished);
+    arrayToLocal("auxList", auxList);
+  }, []);
+  
   //App state
-
   return (
     <BrowserRouter>
       <div className="app">
