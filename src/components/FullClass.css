@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap");
 
 .fullClass {
   background-color: #343739;
@@ -6,9 +6,9 @@
   width: 350px;
   height: 205px;
   margin: 0px 0px 20px 20px;
-  color: #9F9F9F;
+  color: #9f9f9f;
 }
-.top_info{
+.top_info {
   position: absolute;
   top: 10px;
   left: 15px;
@@ -22,14 +22,14 @@
   cursor: pointer;
 }
 .checkBox:checked {
-  accent-color: #FF7901;
+  accent-color: #ff7901;
   fill: white;
 }
 .checkBox:checked:after {
   color: white;
 }
 
-.title{
+.title {
   margin-left: 10px;
   line-height: 18px;
 }
@@ -40,18 +40,18 @@
   width: 100%;
 }
 
-h3{
-  color: #D1D1D1;
+h3 {
+  color: #d1d1d1;
 }
-h4{
+h4 {
   font-size: 14px;
 }
 h1,
 h2,
 h3,
-h4, 
+h4,
 div {
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   margin: 0;
 }
 
@@ -112,7 +112,7 @@ div {
   height: 8px;
   width: 8px;
   margin: 5px 0px 0px 10px;
-  background-color: #B9B9B9;
+  background-color: #b9b9b9;
   border-radius: 50px;
 }
 
@@ -124,28 +124,28 @@ div {
   border-radius: 50px;
 }
 
-.balls{
+.balls {
   display: flex;
 }
-.level{
+.level {
   display: flex;
 }
 
-.date{
+.date {
   margin-left: 10px;
 }
 
-.finished{
+.finished {
   width: 90px;
   height: 20px;
-  background-color: #FF7901;
+  background-color: #ff7901;
   display: flex;
   text-align: center;
   justify-content: center;
-  color: #FFF9F5;
+  color: #fff9f5;
   border-radius: 50px;
   font-size: 13px;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   font-weight: 400;
   margin: 0px 0px 0px 0px;
   line-height: 20px;

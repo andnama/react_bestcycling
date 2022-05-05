@@ -1,24 +1,25 @@
-import React from "react";
+import React, { useContext } from "react";
 import { useNavigate } from "react-router-dom";
 
 import geoPoint from "../assets/map.png";
 import bc_icon from "../assets/bc_icon.png";
 
-import { profile } from "../db/db";
-
 //styling
 import "./Profile.css";
+import { ApiContext } from "../providers/ApiContextProvider";
 
-const getUserImage = () => {
-  return profile ? profile.avatar : bc_icon;
+const getUserImage = (url) => {
+  return url ?? bc_icon;
 };
 
 const Profile = () => {
   const navigate = useNavigate();
+  const { profile } = useContext(ApiContext);
+  if (!profile) return <div styling={{ color: "white" }}> Loading! </div>;
   return (
     <>
       <div className="user_personal_info">
-        <img className="avatar" src={getUserImage()} alt="none" />
+        <img className="avatar" src={getUserImage(profile.avatar)} alt="none" />
         <div className="user_info">
           <h1>{profile.name}</h1>
           <div className="location">
@@ -64,7 +65,11 @@ const Profile = () => {
       <hr className="solid" />
       <div className="last_classes">
         <h2>Últimas Clases</h2>
-        <button onClick={() => navigate("/all_classes")} className="classes_button" type="button">
+        <button
+          onClick={() => navigate("/all_classes")}
+          className="classes_button"
+          type="button"
+        >
           Ver todas
         </button>
       </div>
