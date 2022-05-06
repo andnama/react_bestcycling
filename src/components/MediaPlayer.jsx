@@ -16,12 +16,8 @@ const MediaPlayer = () => {
   let { state } = useLocation();
   const [isFinished, setIsFinished] = useState(false);
 
-  const {
-    state: playerState,
-    switchAutoOff,
-    remove,
-  } = useContext(PlayerContext);
-  console.log(playerState.autoPlay);
+  const { state: playerState, remove, removeAll } = useContext(PlayerContext);
+
   if (!state && playerState.autoArray.length) {
     state = playerState.autoArray[0];
   }
@@ -32,33 +28,33 @@ const MediaPlayer = () => {
   // Count down and completetion set when it finishes
   useEffect(() => {
     if (count === 0) timerIs0();
-    setTimeout(() => {
-      setCount((count) => count - 1);
-    }, 1000);
+    else {
+      setTimeout(() => {
+        setCount((count) => count - 1);
+      }, 1000);
+    }
   });
 
   // If timer gets to 0 update state in localStorage about completition
   const timerIs0 = () => {
     setCount(5);
     remove(state);
-    console.log(playerState.autoPlay);
-    if (!playerState.autoPlay) navigate("/");
     let arrayFinished = arrayInLocal("finished_array");
     arrayFinished[state] = true;
     arrayToLocal("finished_array", arrayFinished);
   };
   useEffect(() => {
-    if (!playerState?.autoArray.length && playerState.autoPlay) {
+    if (!playerState?.autoArray.length) {
       setIsFinished(true);
-      switchAutoOff();
       navigate("/");
     }
   }, [playerState, navigate]);
 
   //clicked on return button without finishing
   const manualReturn = () => {
+    // We are returning to main page so we don´t want to keep selcted items since its going to be reset
+    removeAll();
     // 33 code means return from media player
-    switchAutoOff();
     navigate("/");
   };
 

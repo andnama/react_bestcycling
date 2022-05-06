@@ -59,6 +59,7 @@ const FullClass = ({ trainClass, element, finished }) => {
   let navigate = useNavigate();
 
   const handleNavigation = (e) => {
+    add(element);
     navigate("/media_player", { state: element });
   };
   //Component

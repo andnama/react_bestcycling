@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom";
 import "./SmallClass.css";
 import icon from "../assets/small_logo.png";
 import { ApiContext } from "../providers/ApiContextProvider";
+import { PlayerContext } from "../providers/PlayerContextProvider";
 
 const SmallClass = ({ trainClass, element }) => {
   //Classes state and data
@@ -14,12 +15,19 @@ const SmallClass = ({ trainClass, element }) => {
     instructors
   );
 
+  //Classes state and data
+  const { add } = useContext(PlayerContext);
+
+  const handleNavigation = (e) => {
+    add(element);
+    navigate("/media_player", { state: element });
+  };
   let navigate = useNavigate();
   return (
     <div
       key={trainClass.id}
       className="small_class"
-      onClick={() => navigate("/media_player", { state: element })}
+      onClick={(e) => handleNavigation(e)}
     >
       <div className="small_class_header">
         <img className="small_icon" src={icon} alt="None" />

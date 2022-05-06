@@ -12,9 +12,7 @@ const ClassesView = () => {
   const { trainingClasses } = useContext(ApiContext);
 
   //Classes state and data
-  const { switchAutoOn } = useContext(PlayerContext);
   const auto = () => {
-    switchAutoOn();
     navigate("/media_player");
   };
   return (
